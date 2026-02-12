@@ -1,0 +1,459 @@
+Código da Turma,Código da Disciplina,Nome da Disciplina,Tipo da Turma,Sala,Horários,Professor(es)
+2026145,MAC0101,Integração na Universidade e na Profissão,Graduação,Sem Sala,ter 13:00 14:40,Paulo R. M. Meirelles
+2026145,MAC0102,Caminhos no Bacharelado em Ciência da Computação,Graduação,Sem Sala,qui 12:00 13:40,Paulo R. M. Meirelles
+2026145,MAC0105,Fundamentos de Matemática para a Computação,Graduação,Sem Sala,"qua 14:00 15:40
+sex 08:00 09:40",Guilherme O. Mota
+2026141,MAC0110,Introdução à Computação,Graduação,Sem Sala,"ter 08:00 09:40
+qui 10:00 11:40",Benjamin M. Bumpus
+2026142,MAC0110,Introdução à Computação,Graduação,Sem Sala,ter 08:00 11:40,Leonidas O. Brandao
+2026145,MAC0110,Introdução à Computação,Graduação,Sem Sala,"seg 08:00 09:40
+qua 10:00 11:40",Fábio H. Botler
+2026151,MAC0110,Introdução à Computação,Graduação,Sem Sala,"ter 08:00 09:40
+qui 10:00 11:40",Carlos H. Morimoto
+2026154,MAC0110,Introdução à Computação,Graduação,Sem Sala,"qua 21:10 22:50
+sex 19:20 21:00",Manoel M. Sanches
+2026145,MAC0209,Modelagem e Simulação,Graduação,Sem Sala,seg 14:00 17:40,Roberto M. C. Junior
+2026145,MAC0210,Laboratório de Métodos Numéricos,Graduação,Sem Sala,"ter 08:00 09:40
+qui 10:00 11:40",Marcelo G. Queiroz
+2026145,MAC0213,Atividade Curricular em Comunidade,Graduação,Sem Sala,sab 08:00 09:40,André Fujita
+2026145,MAC0214,Atividade Curricular em Cultura e Extensão,Graduação,Sem Sala,sab 14:00 15:40,André Fujita
+2026145,MAC0215,Atividade Curricular em Pesquisa,Graduação,Sem Sala,sab 10:00 11:40,André Fujita
+2026145,MAC0320,Introdução à Teoria dos Grafos,Graduação,Sem Sala,"ter 14:00 15:40
+qui 16:00 17:40",Fábio H. Botler
+2026145,MAC0323,Algoritmos e Estruturas de Dados II,Graduação,Sem Sala,"ter 10:00 11:40
+qui 08:00 09:40",Maurício L. R. C. Neto
+2026145,MAC0327,Desafios de Programação,Graduação,Sem Sala,"ter 14:00 15:40
+sex 10:00 11:40",Maurício L. R. C. Neto
+2026145,MAC0329,Álgebra Booleana e Aplicações no Projeto de Arquitetura de Computadores,Graduação,Sem Sala,"ter 08:00 09:40
+qui 10:00 11:40",Roberto H. Junior
+2026145,MAC0335,Leitura Dramática,Graduação,Sem Sala,qui 13:00 16:00,Alan M. Durham
+2026145,MAC0336,Criptografia para Segurança de Dados,Graduação,Sem Sala,"seg 16:00 17:40
+qua 14:00 15:40",Routo Terada
+2026145,MAC0350,Introdução ao Desenvolvimento de Sistemas de Software,Graduação,Sem Sala,"ter 10:00 11:40
+qui 08:00 09:40",Paulo R. M. Meirelles
+2026145,MAC0352,Redes de Computadores e Sistemas Distribuídos,Graduação,Sem Sala,"seg 10:00 11:40
+qua 08:00 09:40",Helder M. N. S. Oliveira
+2026145,MAC0417,Visão e Processamento de Imagens,Graduação,Sem Sala,"seg 16:00 17:40
+qua 14:00 15:40",Ronaldo F. Hashimoto
+2026145,MAC0420,Introdução a Computação Gráfica,Graduação,Sem Sala,"ter 16:00 17:40
+qui 16:00 17:40",Carlos H. Morimoto
+2026145,MAC0422,Sistemas Operacionais,Graduação,Sem Sala,"seg 08:00 09:40
+qua 10:00 11:40",Daniel M. Batista
+2026145,MAC0425,Inteligência Artificial,Graduação,Sem Sala,"ter 16:00 17:40
+qui 14:00 15:40",Leliane N. Barros
+2026145,MAC0426,Sistemas de Bancos de Dados,Graduação,Sem Sala,"ter 10:00 11:40
+qui 08:00 09:40",Kelly R. Braghetto
+2026144,MAC0427,Otimização Não Linear,Graduação,Sem Sala,"ter 10:10 12:10
+qui 08:00 09:20",Ernesto J. G. Birgin
+2026154,MAC0427,Otimização Não Linear,Graduação,Sem Sala,"seg 19:20 21:00
+qui 21:10 22:50",Marcel K. C. Silva
+2026145,MAC0456,Tópicos Especiais em Engenharia de Software,Graduação,Sem Sala,sab 14:00 17:40,Paulo R. M. Meirelles
+2026145,MAC0460,Introdução ao aprendizado de máquina,Graduação,Sem Sala,"seg 10:00 11:40
+qua 08:00 09:40",Nina S. T. Hirata
+2026145,MAC0465,Biologia Computacional,Graduação,Sem Sala,"ter 10:00 11:40
+qui 10:00 11:40",Alan M. Durham
+2026145,MAC0470,Desenvolvimento de Software Livre,Graduação,Sem Sala,qua 14:00 17:40,Paulo R. M. Meirelles
+2026145,MAC0472,Laboratório de Métodos Ágeis,Graduação,Sem Sala,"seg 14:00 15:40
+qui 16:00 17:40",Alfredo G. V. Lejbman
+2026145,MAC0499,Trabalho de Formatura Supervisionado,Graduação,Sem Sala,sab 07:00 08:00,"Benjamin M. Bumpus
+André Fujita
+Paulo R. M. Meirelles
+Nina S. T. Hirata"
+2026145,MAC0500,Trabalho de Formatura Supervisionado Voltado à Extensão,Graduação,Sem Sala,sab 09:00 10:00,"Benjamin M. Bumpus
+Nina S. T. Hirata
+Paulo R. M. Meirelles"
+2026111,MAC5001,Jogos Educacionais Digitais,Pós Graduação,Sem Sala,sex 08:00 12:00,Pedro H. D. Valle
+2026111,MAC5003,Estatística/IA de Redes para Ciências Biológicas,Pós Graduação,Sem Sala,"seg 08:00 12:00
+ter 08:00 12:00
+qua 08:00 12:00
+qui 08:00 12:00
+sex 08:00 12:00",André Fujita
+2026111,MAC5005,Fundamentos Matemáticos do Aprendizado Sequencial e Online,Pós Graduação,Sem Sala,seg 14:00 16:00,Yoshiharu Kohayakawa
+20261133,MAC5711,Análise de Algoritmos,Pós Graduação,Sem Sala,"ter 16:00 18:00
+qui 14:00 16:00",Fábio H. Botler
+2026161,MAC5716,Laboratório de Programação Extrema,Pós Graduação,Sem Sala,"seg 14:00 16:00
+qui 16:00 18:00",Alfredo G. V. Lejbman
+2026144,MAC5717,Laboratório Avançado de Métodos Ágeis de Desenvolvimento de Software,Pós Graduação,Sem Sala,"seg 14:00 16:00
+qui 16:00 18:00",Alfredo G. V. Lejbman
+2026182,MAC5723,Introdução à Criptologia,Pós Graduação,Sem Sala,"seg 16:00 18:00
+qua 14:00 16:00",Routo Terada
+2026191,MAC5739,Inteligência Artificial,Pós Graduação,Sem Sala,"ter 16:00 18:00
+qui 14:00 16:00",Leliane N. Barros
+2026171,MAC5744,Introdução à Computação Gráfica,Pós Graduação,Sem Sala,"ter 16:00 18:00
+qui 16:00 18:00",Carlos H. Morimoto
+2026192,MAC5760,Introdução aos Sistemas de Bancos de Dados,Pós Graduação,Sem Sala,"ter 10:00 12:00
+qui 08:00 10:00",Kelly R. Braghetto
+2026162,MAC5764,Tópicos em Engenharia de Software,Pós Graduação,Sem Sala,qua 14:00 17:40,Paulo R. M. Meirelles
+2026172,MAC5768,Visão e Processamento de Imagens,Pós Graduação,Sem Sala,"seg 16:00 18:00
+qua 14:00 16:00",Ronaldo F. Hashimoto
+2026181,MAC5770,Introdução à Teoria dos Grafos,Pós Graduação,Sem Sala,"ter 14:00 16:00
+qui 16:00 18:00",Fábio H. Botler
+2026178,MAC5832,Introdução ao Aprendizado de Máquina,Pós Graduação,Sem Sala,"seg 10:00 12:00
+qua 08:00 10:00",Nina S. T. Hirata
+2026164,MAC5856,Desenvolvimento de Software Livre,Pós Graduação,Sem Sala,qua 14:00 17:40,Paulo R. M. Meirelles
+2026122,MAC6931,Estudos Avançados em Sistemas de Software,Pós Graduação,Sem Sala,sex 14:00 17:40,Pedro H. D. Valle
+2026121,MAC6940,"Estudos Avançados em Planejamento, Modelagem e Raciocínio sob Incerteza I",Pós Graduação,Sem Sala,qua 14:00 16:00,Leliane N. Barros
+2026123,MAC6958,Tópicos Avançados em Ciência de Dados para Redes de Computadores,Pós Graduação,Sem Sala,"seg 10:00 12:00
+qua 08:00 10:00",Daniel M. Batista
+2026124,MAC6958,Tópicos Avançados em Ciência de Dados para Redes de Computadores,Pós Graduação,Sem Sala,"seg 10:00 12:00
+qua 08:00 10:00",Roberto H. Junior
+2026146,MAE0111,Análise Exploratória de Dados,Graduação,Sem Sala,"seg 14:00 15:40
+qua 14:00 15:40",Victor Fossaluza
+2026103,MAE0116,Noções de Estatística,Graduação,Sem Sala,qua 19:20 23:00,"Julia M. P. Soler
+Silvia N. Elian
+Florencia G. Leonardi
+Nikolai V. Kolev
+Viviana Giampaoli
+Francisco F. Queiroz"
+2026104,MAE0116,Noções de Estatística,Graduação,Sem Sala,qua 14:00 17:40,"Florencia G. Leonardi
+Nikolai V. Kolev
+Julia M. P. Soler
+Silvia N. Elian
+Francisco F. Queiroz
+Viviana Giampaoli"
+2026107,MAE0116,Noções de Estatística,Graduação,Sem Sala,qua 14:00 17:40,"Julia M. P. Soler
+Silvia N. Elian
+Viviana Giampaoli
+Francisco F. Queiroz
+Florencia G. Leonardi
+Nikolai V. Kolev"
+2026111,MAE0116,Noções de Estatística,Graduação,Sem Sala,qui 14:00 17:40,Pablo A. Gomes
+2026113,MAE0116,Noções de Estatística,Graduação,Sem Sala,qui 19:20 23:00,Lucia P. Barroso
+2026120,MAE0116,Noções de Estatística,Graduação,Sem Sala,qua 19:20 23:00,"Florencia G. Leonardi
+Nikolai V. Kolev
+Francisco F. Queiroz
+Julia M. P. Soler
+Silvia N. Elian
+Viviana Giampaoli"
+2026150,MAE0116,Noções de Estatística,Graduação,Sem Sala,ter 08:00 12:00,Miguel N. Abadi
+2026154,MAE0121,Introdução a Probabilidade e a Estatística I,Graduação,Sem Sala,"seg 21:10 22:50
+qua 19:20 21:00",Marcos N. Magalhaes
+2026141,MAE0121,Introdução a Probabilidade e a Estatística I,Graduação,Sem Sala,"qua 10:00 11:40
+sex 08:00 09:40",Alexandre G. Patriota
+2026146,MAE0127,Probabilidade I,Graduação,Sem Sala,"seg 08:00 09:40
+qua 10:00 11:40
+sex 08:00 09:40",Adilson Simonis
+2026146,MAE0227,Probabilidade II,Graduação,Sem Sala,"seg 08:00 09:40
+qua 10:00 11:40
+sex 08:00 09:40",Aline D. Oliveira
+2026145,MAE0228,Noções de Probabilidade e Processos Estocásticos,Graduação,Sem Sala,"qua 10:00 11:40
+sex 08:00 09:40",Eduardo J. Neves
+2026154,MAE0228,Noções de Probabilidade e Processos Estocásticos,Graduação,Sem Sala,"seg 19:20 21:00
+qua 21:10 22:50",Vanderlei C. Bueno
+2026146,MAE0301,Inferência Estatística Frequentista,Graduação,Sem Sala,"seg 08:00 09:40
+qua 10:00 11:40
+sex 08:00 09:40",Gisela T. Silva
+2026154,MAE0302,Inferência Bayesiana,Graduação,Sem Sala,"seg 19:20 21:00
+qua 21:10 22:50",Luís G. Esteves
+2026146,MAE0312,Introdução aos Processos Estocásticos,Graduação,Sem Sala,"ter 08:00 09:40
+qui 10:00 11:40",Luiz R. G. Fontes
+2026146,MAE0315,Tecnologia da Amostragem,Graduação,Sem Sala,"seg 14:00 15:40
+qua 14:00 15:40",Airlane P. Alencar
+2026146,MAE0325,Séries Temporais,Graduação,Sem Sala,"ter 08:00 09:40
+qui 10:00 11:40",Maicon J. Karling
+2026146,MAE0331,Estatística Computacional,Graduação,Sem Sala,"ter 10:00 11:40
+qui 08:00 09:40",Anatoli Iambartsev
+2026146,MAE0352,Análise de Dados Categorizados,Graduação,Sem Sala,"seg 10:00 11:40
+qua 08:00 09:40",Gilberto A. Paula
+2026146,MAE0353,Análise Multivariada de Dados,Graduação,Sem Sala,"seg 08:00 09:40
+qua 10:00 11:40
+sex 10:00 11:40",Lucia P. Barroso
+2026146,MAE0413,Estatística Aplicada I,Graduação,Sem Sala,"ter 14:00 17:40
+qui 16:00 17:40","Denise A. Botter
+Monica C. Sandoval"
+2026146,MAE0517,Modelos Aleatórios em Finanças,Graduação,Sem Sala,"seg 14:00 15:40
+qua 14:00 15:40",Vladimir Belitsky
+2026146,MAE0520,Psicometria,Graduação,Sem Sala,"ter 14:00 15:40
+qui 14:00 15:40",Marcia D. E. Branco
+2026146,MAE0523,Elementos da Teoria das Decisões,Graduação,Sem Sala,"seg 16:00 17:40
+qua 16:00 17:40",Luís G. Esteves
+2026146,MAE0610,Tópicos Especiais de Estatística,Graduação,Sem Sala,"ter 16:00 17:40
+qui 16:00 17:40",Nikolai V. Kolev
+2026142,MAE1511,Estatística para Licenciatura I,Graduação,Sem Sala,"ter 10:00 11:40
+sex 08:00 09:40",Marcos N. Magalhaes
+2026147,MAE1511,Estatística para Licenciatura I,Graduação,Sem Sala,"seg 19:20 21:00
+qua 21:10 22:50",Marcos N. Magalhaes
+2026142,MAE1514,Estatística no Ensino Básico,Graduação,Sem Sala,"ter 10:00 11:40
+sex 08:00 09:40",Silvia N. Elian
+20261174,MAE5702,Probabilidade e Inferência Estatística I,Pós Graduação,Sem Sala,"seg 10:00 12:00
+qua 10:00 12:00
+sex 10:00 12:00",Conrado F. P. Costa
+2026193,MAE5703,Modelos probabilísticos discretos e suas aplicações,Pós Graduação,Sem Sala,"ter 16:00 18:00
+qui 16:00 18:00",Luiz R. G. Fontes
+2026191,MAE5704,Técnicas Computacionais em Probabilidade e Estatística I,Pós Graduação,Sem Sala,"ter 10:00 12:00
+sex 08:00 10:00",Maicon J. Karling
+2026193,MAE5705,Perspectivas em Probabilidade e Estatística,Pós Graduação,Sem Sala,seg 12:00 14:00,Lucia P. Barroso
+2026154,MAE5753,Teoria da Decisão,Pós Graduação,Sem Sala,"seg 16:00 18:00
+qua 16:00 18:00",Luís G. Esteves
+2026181,MAE5811,Probabilidade Avançada I,Pós Graduação,Sem Sala,"ter 08:00 10:00
+qui 08:00 10:00",Pablo A. Gomes
+2026174,MAE5870,Análise de Séries Temporais,Pós Graduação,Sem Sala,"seg 08:00 10:00
+qua 08:00 10:00",Airlane P. Alencar
+2026163,MAE5890,Introdução à analise de Risco,Pós Graduação,Sem Sala,"ter 16:00 18:00
+qui 16:00 18:00",Nikolai V. Kolev
+2026123,MAE5905,Introdução a Ciência de Dados,Pós Graduação,Sem Sala,"seg 14:00 16:00
+qua 14:00 16:00",Pedro A. Morettin
+2026112,MAE5914,Modelos Aleatórios em Finanças,Pós Graduação,Sem Sala,"seg 14:00 16:00
+qua 14:00 16:00",Vladimir Belitsky
+2026111,MAE5917,Teoria Assintótica,Pós Graduação,Sem Sala,"ter 14:00 16:00
+qui 14:00 16:00",Antonio C. P. Lima
+2026111,MAE5918,Sistemas de Partículas Interagentes: Abordagem Algébrica e Aplicações,Pós Graduação,Sem Sala,"seg 14:00 16:00
+ter 14:00 16:00
+qua 14:00 16:00",Vladimir Belitsky
+2026144,MAP0100,Conceitos Introdutórios de Matemática,Graduação,Sem Sala,qui 14:00 15:40,"Eduardo Colli
+Sonia R. L. Garcia"
+2026154,MAP0100,Conceitos Introdutórios de Matemática,Graduação,Sem Sala,qui 17:30 19:10,"Eduardo Colli
+Sonia R. L. Garcia"
+2026142,MAP0151,Cálculo Numérico e Aplicações,Graduação,Sem Sala,"ter 08:00 09:40
+sex 10:00 11:40",
+2026147,MAP0151,Cálculo Numérico e Aplicações,Graduação,Sem Sala,"ter 21:10 22:50
+sex 19:20 21:00",Lucas Franceschini
+2026144,MAP0215,Cálculo Vetorial e Aplicações,Graduação,Sem Sala,"ter 08:00 09:40
+qui 10:00 11:40",Salvador A. Zanata
+2026144,MAP0316,Equações Diferenciais II,Graduação,Sem Sala,"seg 14:00 15:40
+qua 16:00 17:40",Salvador A. Zanata
+2026144,MAP0327,Mecânica Analítica Clássica,Graduação,Sem Sala,"ter 16:00 17:40
+qui 16:00 17:40",Frank M. Forger
+2026144,MAP0413,Equações de Derivadas Parciais,Graduação,Sem Sala,"seg 16:00 17:40
+qua 14:00 15:40",Christian D. Jakel
+2026143,MAP0441,Mecânica,Graduação,Sem Sala,"ter 16:00 17:40
+qui 16:00 17:40",Frank M. Forger
+2026142,MAP1151,Práticas de Ensino de Cálculo Numérico,Graduação,Sem Sala,sab 12:00 13:40,
+2026147,MAP1151,Práticas de Ensino de Cálculo Numérico,Graduação,Sem Sala,sab 12:00 13:40,Lucas Franceschini
+2026144,MAP2110,Introdução aos Modelos Lineares,Graduação,Sem Sala,"ter 10:00 11:40
+qui 08:00 09:40",André S. Carvalho
+2026154,MAP2110,Introdução aos Modelos Lineares,Graduação,Sem Sala,"ter 21:10 22:50
+qui 19:20 21:00",Rodrigo B. Proença
+2026144,MAP2210,Aplicações de Álgebra Linear,Graduação,Sem Sala,"ter 10:00 11:40
+qui 08:00 09:40",Nelson M. Kuhl
+2026154,MAP2210,Aplicações de Álgebra Linear,Graduação,Sem Sala,"ter 21:20 23:00
+qui 19:20 21:00",
+2026144,MAP2212,Laboratório de Simulação Estocástica,Graduação,Sem Sala,"ter 10:00 11:40
+qui 16:00 17:40",Julio M. Stern
+2026154,MAP2212,Laboratório de Simulação Estocástica,Graduação,Sem Sala,"ter 19:20 21:00
+qui 21:10 22:50",Julio M. Stern
+2026144,MAP2216,Análise Aplicada,Graduação,Sem Sala,"seg 10:00 11:40
+qua 08:00 09:40",André S. Carvalho
+2026154,MAP2216,Análise Aplicada,Graduação,Sem Sala,"ter 19:20 21:00
+qui 21:10 22:50",Eduardo Colli
+2026154,MAP2225,Modelos em Atuária e Finanças,Graduação,Sem Sala,ter 19:20 21:00,Christian D. Jakel
+2026144,MAP2310,Métodos Numéricos em Equações Diferenciais I,Graduação,Sem Sala,"qua 14:00 15:40
+sex 16:00 17:40",Sonia R. L. Garcia
+2026154,MAP2310,Métodos Numéricos em Equações Diferenciais I,Graduação,Sem Sala,"qui 19:20 21:00
+sex 19:20 21:00",Sonia R. L. Garcia
+2026144,MAP2324,Probabilidade Aplicada,Graduação,Sem Sala,"ter 17:40 19:20
+qui 17:40 19:20",Claudia M. Peixoto
+2026154,MAP2419,Introdução ao Trabalho de Formatura,Graduação,Sem Sala,seg 18:00 18:50,Claudia M. Peixoto
+2026144,MAP2429,Trabalho de Formatura em Matemática Aplicada,Graduação,Sem Sala,seg 18:00 18:50,"Pedro S. Peixoto
+Claudia M. Peixoto"
+20261122,MAP5711,Equações Diferenciais Ordinárias,Pós Graduação,Sem Sala,"seg 14:00 16:00
+qua 16:00 18:00",Salvador A. Zanata
+2026181,MAP5725,Tratamento Numérico de Equações Diferenciais Ordinárias,Pós Graduação,Sem Sala,"seg 10:00 12:00
+ter 10:00 12:00
+qua 10:00 12:00
+qui 10:00 12:00",Fernando V. Ravelo
+20261115,MAP5729,Introdução à Análise Numérica,Pós Graduação,Sem Sala,"seg 16:00 18:00
+qua 14:00 16:00",Joao G. C. Steinstraesser
+2026111,MAP5936,Transições de Fase em Modelos de Ising Alcance e Métodos Multi-escala,Pós Graduação,Sem Sala,"seg 14:00 16:00
+ter 14:00 16:00
+qua 14:00 16:00
+qui 14:00 16:00",Rodrigo B. Proença
+2026111,MAP5937,Equações Diferenciais Estocásticas Aplicadas,Pós Graduação,Sem Sala,"ter 16:00 18:00
+qui 16:00 18:00",Breno R. F. Silva
+2026111,MAP5938,Introdução a Métodos Numéricos Paralelos no Tempo,Pós Graduação,Sem Sala,"seg 14:00 16:00
+ter 14:00 16:00
+qua 14:00 16:00
+qui 14:00 16:00",Joao G. C. Steinstraesser
+2026111,MAP5940,Introdução à Metaestabilidade pelo Método do Resolvente,Pós Graduação,Sem Sala,"ter 14:00 16:00
+qui 14:00 16:00",Claudia M. Peixoto
+2026143,MAT0101,Tópicos de Matemática Elementar,Graduação,Sem Sala,"seg 14:00 15:40
+qua 14:00 15:40",Cristina Cerri
+2026142,MAT0105,Geometria Analítica,Graduação,Sem Sala,"ter 08:00 09:40
+sex 10:00 11:40",Pedro L. Fagundes
+2026147,MAT0105,Geometria Analítica,Graduação,Sem Sala,"qua 19:20 21:00
+sex 21:10 22:50",Marcio V. Almeida
+2026148,MAT0105,Geometria Analítica,Graduação,Sem Sala,"qua 21:10 22:50
+sex 19:20 21:00",Marcio V. Almeida
+2026134,MAT0112,Vetores e Geometria,Graduação,Sem Sala,"ter 08:00 09:40
+qui 10:00 11:40",Christina Brech
+2026143,MAT0112,Vetores e Geometria,Graduação,Sem Sala,"ter 10:00 11:40
+qui 08:00 09:40",Christina Brech
+2026146,MAT0112,Vetores e Geometria,Graduação,Sem Sala,"ter 10:00 11:40
+qui 08:00 09:40",Mary L. Lourenço
+2026142,MAT0120,Álgebra I para Licenciatura,Graduação,Sem Sala,"seg 10:00 11:40
+qui 08:00 09:40",Leila M. V. Figueiredo
+2026147,MAT0120,Álgebra I para Licenciatura,Graduação,Sem Sala,"ter 21:10 22:50
+sex 19:20 21:00",Juan C. G. Fernandez
+2026148,MAT0120,Álgebra I para Licenciatura,Graduação,Sem Sala,"ter 19:20 21:00
+qui 19:20 21:00",Juan C. G. Fernandez
+2026143,MAT0148,Introdução ao Trabalho Científico,Graduação,Sem Sala,sab 08:00 10:00,"Lucia S. I. Murakami
+Alexandre Lymberopoulos
+Vinícius M. Cortes
+Vitor O. Ferreira"
+2025243,MAT0148,Introdução ao Trabalho Científico,Graduação,A242,sab 10:00 12:00,"Lucia S. I. Murakami
+Vinícius M. Cortes
+Alexandre Lymberopoulos
+Vitor O. Ferreira"
+2026143,MAT0205,Cálculo Diferencial e Integral III,Graduação,Sem Sala,"ter 08:00 09:40
+qui 10:00 11:40",Salvador A. Zanata
+2026143,MAT0206,Análise Real,Graduação,Sem Sala,"seg 10:00 11:40
+qua 08:00 09:40
+sex 10:00 11:40",Vinícius M. Cortes
+2026143,MAT0222,Álgebra Linear II,Graduação,Sem Sala,"ter 10:00 11:40
+qui 08:00 09:40",Flavio U. Coelho
+2026147,MAT0223,Introdução a Teoria dos Números,Graduação,Sem Sala,"ter 19:20 21:00
+sex 21:10 22:50",Raul A. Ferraz
+2026142,MAT0231,Álgebra II para Licenciatura,Graduação,Sem Sala,"seg 10:00 11:40
+qui 08:00 09:40",Felipe Y. Yasumura
+2026147,MAT0231,Álgebra II para Licenciatura,Graduação,Sem Sala,"seg 19:20 21:00
+qui 21:10 22:50",Felipe Y. Yasumura
+2026145,MAT0236,Funções Diferenciáveis e Séries,Graduação,Sem Sala,"seg 10:00 11:40
+qua 08:00 09:40",Iuliia Petrova
+2026142,MAT0240,Geometria e Desenho Geométrico II,Graduação,Sem Sala,"seg 08:00 09:40
+qui 10:00 11:40",Severino T. R. Melo
+2026147,MAT0240,Geometria e Desenho Geométrico II,Graduação,Sem Sala,"seg 19:20 21:00
+qui 21:10 22:50",Antonio P. F. Filho
+2026143,MAT0264,Anéis e Corpos,Graduação,Sem Sala,"seg 08:00 09:40
+qua 10:00 11:40",Leila M. V. Figueiredo
+2026142,MAT0310,Geometria III,Graduação,Sem Sala,"seg 10:00 11:40
+qui 08:00 09:40",Ricardo Bianconi
+2026147,MAT0310,Geometria III,Graduação,Sem Sala,"seg 21:10 22:50
+qui 19:20 21:00",Sergio Alves
+2026143,MAT0311,Cálculo Diferencial e Integral V,Graduação,Sem Sala,"seg 17:30 19:10
+qua 17:40 19:20
+sex 17:30 19:10",Paulo D. Cordaro
+2026143,MAT0317,Topologia,Graduação,Sem Sala,"seg 10:00 11:40
+qua 08:00 09:40",Lucia R. Junqueira
+2026142,MAT0320,Introdução à Análise Complexa,Graduação,Sem Sala,"ter 08:00 09:40
+sex 10:00 11:40",Yuri G. Lima
+2026143,MAT0321,Cálculo Integral,Graduação,Sem Sala,"ter 08:00 09:40
+qui 10:00 11:40",Alexandre Lymberopoulos
+2026143,MAT0330,Teoria dos Conjuntos,Graduação,Sem Sala,"seg 14:00 15:40
+qua 16:00 17:40",Vinicius O. Rodrigues
+2026143,MAT0334,Análise Funcional,Graduação,Sem Sala,"ter 14:00 15:40
+qui 14:00 15:40",Leonardo P. Rodrigues
+2026143,MAT0359,Lógica,Graduação,Sem Sala,"seg 16:00 17:40
+qua 14:00 15:40",Francisco M. Neto
+2026143,MAT0364,Teoria de Galois,Graduação,Sem Sala,"seg 08:00 09:40
+qua 10:00 11:40",Lucia S. I. Murakami
+2026143,MAT0370,Introdução à Teoria das Categorias,Graduação,Sem Sala,"ter 16:00 17:40
+qui 16:00 17:40",Hugo L. Mariano
+2026143,MAT0405,Sistemas Dinâmicos,Graduação,Sem Sala,"ter 10:00 11:40
+sex 08:00 09:40",Yuri G. Lima
+2026147,MAT0450,Seminário de Resolução de Problemas,Graduação,Sem Sala,"ter 21:10 22:50
+sex 19:20 21:10",Barbara C. Valério
+2026142,MAT0451,Projeto de Ensino de Matemática,Graduação,Sem Sala,"qua 17:40 19:20
+sab 08:00 09:40",Maria E. E. L. Galvao
+2026143,MAT0462,Tópicos de Matemática III,Graduação,Sem Sala,"ter 16:00 17:40
+sex 16:00 17:40",Claude M. E. M. Marion
+2026143,MAT0521,Representações de Grupos,Graduação,Sem Sala,"ter 10:00 11:40
+sex 08:00 09:40",Lucia S. I. Murakami
+2026142,MAT1201,Práticas de Ensino de Álgebra I,Graduação,Sem Sala,"seg 10:00 11:40
+qui 08:00 09:40",
+2026147,MAT1201,Práticas de Ensino de Álgebra I,Graduação,Sem Sala,"ter 21:10 22:50
+sex 19:20 21:00",
+2026148,MAT1201,Práticas de Ensino de Álgebra I,Graduação,Sem Sala,"ter 19:20 21:00
+qui 19:20 21:00",
+2026142,MAT1351,Cálculo para Funções de Uma Variável Real I,Graduação,Sem Sala,"seg 08:00 09:40
+qua 10:00 11:40
+qui 10:00 11:40",Lucia R. Junqueira
+2026147,MAT1351,Cálculo para Funções de Uma Variável Real I,Graduação,Sem Sala,"seg 21:10 22:50
+ter 19:20 21:00
+qui 19:20 21:00",Leonardo Barichello
+2026148,MAT1351,Cálculo para Funções de Uma Variável Real I,Graduação,Sem Sala,"seg 19:20 21:00
+ter 21:10 22:50
+qui 21:10 22:50",Leonardo Barichello
+2026142,MAT1500,Projetos de Estágio,Graduação,Sem Sala,sex 13:20 15:00,Rogerio A. S. Fajardo
+2026147,MAT1500,Projetos de Estágio,Graduação,Sem Sala,ter 17:30 19:10,Barbara C. Valério
+2026148,MAT1500,Projetos de Estágio,Graduação,Sem Sala,sab 10:00 11:40,Rita S. Guimarães
+2026152,MAT1500,Projetos de Estágio,Graduação,Sem Sala,sab 10:00 11:40,Marcio V. Almeida
+2026142,MAT1513,Laboratório de Matemática,Graduação,Sem Sala,"seg 10:00 11:40
+qui 08:00 09:40",Lucilia D. Borsari
+2026147,MAT1513,Laboratório de Matemática,Graduação,Sem Sala,"seg 19:20 21:00
+qua 21:10 22:50",Rita S. Guimarães
+2026148,MAT1513,Laboratório de Matemática,Graduação,Sem Sala,"seg 21:10 22:50
+qua 19:20 21:00",Rita S. Guimarães
+2026142,MAT2351,Cálculo para Funções de Várias Variáveis I,Graduação,Sem Sala,"seg 08:00 09:40
+qui 10:00 11:40",David P. Dias
+2026147,MAT2351,Cálculo para Funções de Várias Variáveis I,Graduação,Sem Sala,"seg 21:10 22:50
+qua 19:20 21:00",Vinicius O. Rodrigues
+2026142,MAT2401,Práticas de Ensino de Geometria II,Graduação,Sem Sala,"seg 08:00 09:40
+qui 10:00 11:40",
+2026147,MAT2401,Práticas de Ensino de Geometria II,Graduação,Sem Sala,"seg 19:20 21:00
+qui 21:10 22:50",
+2026143,MAT2453,Cálculo Diferencial e Integral I,Graduação,Sem Sala,"seg 10:00 11:40
+qua 08:00 09:40
+sex 10:00 11:40",Pierluigi Benevieri
+2026145,MAT2453,Cálculo Diferencial e Integral I,Graduação,Sem Sala,"seg 10:00 11:40
+qua 08:00 09:40
+sex 10:00 11:40",Eloi M. Galego
+2026146,MAT2453,Cálculo Diferencial e Integral I,Graduação,Sem Sala,"seg 10:00 11:40
+qua 08:00 09:40
+sex 10:00 11:40",Lucia S. I. Murakami
+2026154,MAT2453,Cálculo Diferencial e Integral I,Graduação,Sem Sala,"seg 19:20 21:00
+ter 19:20 21:00
+qui 21:10 22:50",José L. V. Rodríguez
+2026146,MAT2465,"Sequências, Séries e Equações Diferenciais",Graduação,Sem Sala,"seg 10:00 11:40
+qua 08:00 09:40
+sex 10:00 11:40",Zara I. Abud
+2026154,MAT3120,Cálculo Diferencial e Integral III,Graduação,Sem Sala,"seg 21:10 22:50
+qua 19:20 21:10",Lucas C. C. Souza
+20261104,MAT4302,Tópicos de Álgebra Linear,Pós Graduação,Sem Sala,"seg 15:00 17:00
+ter 15:00 17:00
+qua 15:00 17:00
+qui 15:00 17:00",Cristian A. O. Gonzalez
+20261112,MAT5711,Cálculo Avançado,Pós Graduação,Sem Sala,"ter 16:00 18:00
+qui 16:00 18:00",Marcos M. A. Silva
+2026162,MAT5716,Introdução às Equações Diferenciais Parciais,Pós Graduação,Sem Sala,"qua 14:00 16:00
+sex 14:00 16:00",Daniel R. Marroquin
+20261104,MAT5719,Cálculo Diferencial Geométrico no RN,Pós Graduação,Sem Sala,"seg 10:00 12:00
+ter 10:00 12:00
+qua 10:00 12:00
+qui 10:00 12:00",Cristian A. O. Gonzalez
+20261112,MAT5721,Introdução à Análise Funcional,Pós Graduação,Sem Sala,"ter 14:00 16:00
+qui 14:00 16:00",Leonardo P. Rodrigues
+20261101,MAT5737,Introdução à Álgebra Comutativa,Pós Graduação,Sem Sala,"ter 09:00 11:00
+qua 09:00 11:00
+qui 09:00 11:00
+sex 09:00 11:00",Kostiantyn Iusenko
+2026195,MAT5741,Topologia Geral,Pós Graduação,Sem Sala,"seg 10:00 12:00
+qua 08:00 10:00",Lucia R. Junqueira
+2026185,MAT5771,Geometria Riemanniana,Pós Graduação,Sem Sala,"ter 14:00 16:00
+qui 14:00 16:00",Marcelo S. Atallah
+20261122,MAT5797,Introdução à Álgebra Homológica,Pós Graduação,Sem Sala,"ter 14:00 16:00
+sex 14:00 16:00",Kostiantyn Iusenko
+20261123,MAT5798,Medida e Integração,Pós Graduação,Sem Sala,"seg 08:00 10:00
+qua 10:00 12:00",Iuliia Petrova
+2026151,MAT5805,Tópicos em Teoria de Grupos,Pós Graduação,Sem Sala,"ter 16:00 18:00
+sex 16:00 18:00",Claude M. E. M. Marion
+2026141,MAT6003,Introdução às Super-Álgebras,Pós Graduação,Sem Sala,"qua 16:00 18:00
+qui 16:00 18:00",Ivan Chestakov
+2026122,MAT6202,Introdução à Teoria dos Conjuntos,Pós Graduação,Sem Sala,"seg 14:00 16:00
+qua 16:00 18:00",Vinicius O. Rodrigues
+2026121,MAT6428,Espaços Simétricos,Pós Graduação,Sem Sala,"seg 08:00 10:00
+qua 10:00 12:00",Claudio Gorodski
+2026142,MAT6601,Introdução à Lógica Matemática,Pós Graduação,Sem Sala,"seg 16:00 18:00
+qua 14:00 16:00","Francisco M. Neto
+Hugo L. Mariano"
+2026134,MAT6603,Introdução à Teoria das Categorias,Pós Graduação,Sem Sala,"ter 16:00 18:00
+qui 16:00 18:00",Hugo L. Mariano
+2026121,MAT6622,Introdução aos Grupoides de Lie e Geometria de Poisson,Pós Graduação,Sem Sala,"ter 10:00 12:00
+qui 10:00 12:00",Ivan Struchiner
+2026132,MAT6643,Teoria de Galois,Pós Graduação,Sem Sala,"seg 08:00 10:00
+qua 10:00 12:00",Lucia S. I. Murakami
+2026123,MAT6681,Representações de Grupos,Pós Graduação,Sem Sala,"ter 10:00 12:00
+sex 08:00 10:00",Lucia S. I. Murakami
+2026132,MAT6683,Sistemas Dinâmicos,Pós Graduação,Sem Sala,"ter 10:00 12:00
+sex 08:00 10:00",Yuri G. Lima
+2026121,MAT6702,Tópicos de Geometria Lorentziana,Pós Graduação,Sem Sala,"ter 08:00 10:00
+qui 08:00 10:00",Paolo Piccione
+2026135,MPM5602,Estatística I,Pós Graduação,Sem Sala,"ter 15:00 16:45
+qui 15:00 16:45",Viviana Giampaoli
+2026136,MPM5606,Tópicos de História da Matemática,Pós Graduação,Sem Sala,ter 17:00 18:45,Eduardo N. Marcos
+2026143,MPM5607,Matemática nos Currículos da Educação Básica,Pós Graduação,Sem Sala,"ter 15:00 16:45
+qui 15:00 16:45",Barbara C. Valério
+2026135,MPM5608,Análise Real com Aplicações,Pós Graduação,Sem Sala,"ter 19:20 21:05
+qui 19:20 21:05",Daniela M. S. Vieira
+2026145,MPM5609,Projetos em Ensino de Matemática,Pós Graduação,Sem Sala,"ter 19:20 21:05
+qui 19:20 21:05",Vera H. G. Souza
+2026135,MPM5610,Tendências da Educação Matemática,Pós Graduação,Sem Sala,ter 17:00 18:45,David P. Dias
