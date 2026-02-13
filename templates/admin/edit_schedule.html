@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Editar Turma {{ class_obj.code }}</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label">Disciplina</label>
+                        <input type="text" class="form-control"
+                            value="{{ class_obj.discipline.code }} - {{ class_obj.discipline.name }}" disabled>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="semester" class="form-label">Semestre</label>
+                            <input type="text" class="form-control" id="semester" name="semester"
+                                value="{{ class_obj.semester }}" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="class_type" class="form-label">Tipo (Téorica/Prática)</label>
+                            <input type="text" class="form-control" id="class_type" name="class_type"
+                                value="{{ class_obj.class_type }}">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="room" class="form-label">Sala/Local</label>
+                        <input type="text" class="form-control" id="room" name="room" value="{{ class_obj.room }}">
+                    </div>
+
+                    <hr>
+                    <h5>Horários Atuais</h5>
+                    {% if class_obj.schedules %}
+                    <ul class="list-group mb-3">
+                        {% for sched in class_obj.schedules %}
+                        <li class="list-group-item">
+                            {{ sched.day }} das {{ sched.start_time }} às {{ sched.end_time }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p class="text-muted">Nenhum horário cadastrado.</p>
+                    {% endif %}
+
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ url_for('admin.schedules_list') }}" class="btn btn-secondary">Cancelar</a>
+                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

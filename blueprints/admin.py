@@ -139,8 +139,93 @@ def delete_user(user_id):
             flash('Usuário excluído.', 'success')
     return redirect(url_for('admin.users_list'))
 
-# --- Global Settings ---
+# --- Schedule Management ---
 
+from models import Class, Discipline, Schedule, Professor
+from sqlalchemy import or_
+
+@admin_bp.route('/schedules')
+@login_required
+def schedules_list():
+    if current_user.role not in ['admin', 'operator']:
+        flash('Acesso negado.', 'danger')
+        return redirect(url_for('main.index'))
+        
+    # Filters
+    discipline_filter = request.args.get('discipline')
+    class_filter = request.args.get('class_code')
+    department_filter = request.args.get('department')
+    level_filter = request.args.get('degree_level')
+    
+    query = Class.query.join(Discipline)
+    
+    if discipline_filter:
+        query = query.filter(
+            or_(
+                Discipline.code.ilike(f'%{discipline_filter}%'),
+                Discipline.name.ilike(f'%{discipline_filter}%')
+            )
+        )
+    
+    if class_filter:
+        query = query.filter(Class.code.ilike(f'%{class_filter}%'))
+        
+    if department_filter:
+        query = query.filter(Discipline.department == department_filter)
+        
+    if level_filter:
+        query = query.filter(Discipline.degree_level == level_filter)
+        
+    # Pagination (Limit to 50 for performance if no filter, or all if filtered? Let's limit 100)
+    schedules = query.limit(100).all()
+    
+    return render_template('admin/schedules.html', classes=schedules)
+
+@admin_bp.route('/schedules/edit/<int:class_id>', methods=['GET', 'POST'])
+@login_required
+def edit_schedule(class_id):
+    if current_user.role not in ['admin', 'operator']:
+        flash('Acesso negado.', 'danger')
+        return redirect(url_for('main.index'))
+        
+    class_obj = Class.query.get_or_404(class_id)
+    
+    if request.method == 'POST':
+        class_obj.class_type = request.form.get('class_type')
+        class_obj.room = request.form.get('room')
+        class_obj.semester = request.form.get('semester')
+        # We could allow editing code, but be careful with discipline relation
+        
+        db.session.commit()
+        flash('Turma atualizada com sucesso!', 'success')
+        return redirect(url_for('admin.schedules_list'))
+        
+    return render_template('admin/edit_schedule.html', class_obj=class_obj)
+
+@admin_bp.route('/schedules/delete/<int:class_id>', methods=['POST'])
+@login_required
+def delete_schedule(class_id):
+    if current_user.role not in ['admin', 'operator']:
+        flash('Acesso negado.', 'danger')
+        return redirect(url_for('main.index'))
+        
+    class_obj = Class.query.get_or_404(class_id)
+    
+    # Process cleanup (Cascading deletes if not handled by DB needs manual cleanup)
+    # SQLAlchemy relationship handles cascades usually if configured, 
+    # but let's manual delete schedules just in case to be safe if cascade isn't set.
+    Schedule.query.filter_by(class_id=class_obj.id).delete()
+    # Also remove professors link??
+    # ClassProfessor.query.filter_by(class_id=class_obj.id).delete() 
+    # (Assuming we have imported ClassProfessor model, let's check imports)
+    
+    db.session.delete(class_obj)
+    db.session.commit()
+    
+    flash('Turma excluída com sucesso.', 'success')
+    return redirect(url_for('admin.schedules_list'))
+
+# --- Global Settings ---
 from models import GlobalSettings
 
 @admin_bp.route('/settings', methods=['GET', 'POST'])
