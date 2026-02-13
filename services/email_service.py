@@ -1,5 +1,3 @@
-from flask_mail import Message
-from extensions import mail
 from flask import current_app
 from models import GlobalSettings
 import smtplib
