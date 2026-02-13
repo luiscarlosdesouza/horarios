@@ -3,7 +3,7 @@ set -e
 
 echo "Running migrations..."
 
-if [ -d "migrations" ]; then
+if [ -d "migrations" ] && [ -n "$(ls -A migrations/versions 2>/dev/null)" ]; then
     flask db upgrade
     echo "Creating/Updating admin user..."
     python create_admin.py
