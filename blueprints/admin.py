@@ -127,3 +127,38 @@ def delete_user(user_id):
             db.session.commit()
             flash('Usuário excluído.', 'success')
     return redirect(url_for('admin.users_list'))
+
+# --- Global Settings ---
+
+from models import GlobalSettings
+
+@admin_bp.route('/settings', methods=['GET', 'POST'])
+@login_required
+def settings():
+    if current_user.role != 'admin':
+        flash('Acesso negado.', 'danger')
+        return redirect(url_for('main.index'))
+        
+    settings = GlobalSettings.query.first()
+    if not settings:
+        settings = GlobalSettings()
+        db.session.add(settings)
+        db.session.commit()
+        
+    if request.method == 'POST':
+        settings.smtp_server = request.form.get('smtp_server')
+        settings.smtp_port = int(request.form.get('smtp_port'))
+        settings.email_user = request.form.get('email_user')
+        
+        pwd = request.form.get('email_password')
+        if pwd and pwd.strip():
+            settings.email_password = pwd
+            
+        settings.email_to = request.form.get('email_to')
+        settings.interval_weekday = int(request.form.get('interval_weekday') or 60)
+        settings.interval_weekend = int(request.form.get('interval_weekend') or 120)
+        
+        db.session.commit()
+        flash('Configurações atualizadas com sucesso!', 'success')
+        
+    return render_template('admin/settings.html', settings=settings)

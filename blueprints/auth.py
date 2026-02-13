@@ -123,7 +123,23 @@ def usp_callback():
                 )
                 db.session.add(user)
                 db.session.commit()
-                # TODO: Send welcome email
+                # Send Notifications
+                try:
+                    from models import GlobalSettings
+                    from services.email_service import send_welcome_email, send_new_user_admin_notification
+                    
+                    settings = GlobalSettings.query.first()
+                    if settings:
+                        # Send Welcome to User
+                        send_welcome_email(user, settings)
+                        
+                        # Notify Admins (defined in settings or query DB)
+                        admins = User.query.filter_by(role='admin').all()
+                        send_new_user_admin_notification(user, admins, settings)
+                        
+                except Exception as e:
+                    print(f"Error sending emails: {e}")
+
                 
         login_user(user)
         flash(f'Bem-vindo, {user.name}!', 'success')

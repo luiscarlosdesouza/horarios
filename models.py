@@ -51,3 +51,18 @@ class User(UserMixin, db.Model):
     role = db.Column(db.String(20), default='user')
     password_hash = db.Column(db.String(200))
     is_default_password = db.Column(db.Boolean, default=False)
+
+class GlobalSettings(db.Model):
+    __tablename__ = 'global_settings'
+    id = db.Column(db.Integer, primary_key=True)
+    # Email Config
+    email_user = db.Column(db.String(100), nullable=True)
+    email_password = db.Column(db.String(100), nullable=True)
+    email_to = db.Column(db.String(500), nullable=True) # Quem recebe notificacoes
+    smtp_server = db.Column(db.String(100), default='smtp.gmail.com')
+    smtp_port = db.Column(db.Integer, default=587)
+    
+    # Intervals (Optional, inherited from monitora_sites idea)
+    interval_weekday = db.Column(db.Integer, default=60)
+    interval_weekend = db.Column(db.Integer, default=120)
+    alert_threshold = db.Column(db.Integer, default=15)
