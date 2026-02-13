@@ -85,6 +85,8 @@
             Nenhum filtro selecionado (Todos os registros)
             {% endif %}
             <br><br>
+            <strong>Legenda:</strong> G = Graduação | PG = Pós-Graduação
+            <br>
             Gerado em: {{ generated_at }}
         </div>
 
@@ -94,10 +96,10 @@
                     <th width="12%">Código</th>
                     <th width="28%">Disciplina</th>
                     <th width="8%">Turma</th>
-                    <th width="8%">Tipo</th>
+                    <th width="5%">Nvl</th>
                     <th width="8%">Sala</th>
                     <th width="18%">Horários</th>
-                    <th width="18%">Docentes</th>
+                    <th width="21%">Docentes</th>
                 </tr>
             </thead>
             <tbody>
@@ -106,7 +108,12 @@
                     <td>{{ c.discipline.code }}</td>
                     <td>{{ c.discipline.name }}</td>
                     <td class="center">{{ c.code }}</td>
-                    <td class="center">{{ c.class_type }}</td>
+                    <td class="center">
+                        {% if 'Grad' in c.discipline.degree_level %}G
+                        {% elif 'Pós' in c.discipline.degree_level %}PG
+                        {% else %}{{ c.discipline.degree_level[:2] }}
+                        {% endif %}
+                    </td>
                     <td class="center">{{ c.room }}</td>
                     <td>
                         {% for s in c.schedules %}

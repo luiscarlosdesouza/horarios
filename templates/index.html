@@ -97,31 +97,63 @@
     <div class="table-responsive">
         <table class="table table-hover mb-0">
             <thead class="table-light">
-                <tr>
-                    <th>Disciplina</th>
-                    <th>Turma</th>
-                    <th>Semestre</th>
-                    <th>Tipo</th>
-                    <th>Sala</th>
-                    <th>Depto</th>
-                    <th>Horários</th>
-                </tr>
-            </thead>
+                <thead>
+                    <tr>
+                        <th
+                            class="px-6 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Código / Disciplina
+                        </th>
+                        <th
+                            class="px-6 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Turma
+                        </th>
+                        <th
+                            class="px-6 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Tipo
+                        </th>
+                        <th
+                            class="px-6 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Sala
+                        </th>
+                        <th
+                            class="px-6 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Horários
+                        </th>
+                        <th
+                            class="px-6 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Docentes
+                        </th>
+                    </tr>
+                </thead>
             <tbody>
-                {% for class_obj in search_results %}
+                {% for c in search_results %}
                 <tr>
-                    <td>
-                        <strong>{{ class_obj.discipline.code }}</strong><br>
-                        <small class="text-muted">{{ class_obj.discipline.name }}</small>
+                    <td class="px-6 py-4 border-b border-gray-200 bg-white text-sm">
+                        <span class="font-bold text-gray-800">{{ c.discipline.code }}</span><br>
+                        <span class="text-gray-600">{{ c.discipline.name }}</span>
                     </td>
-                    <td>{{ class_obj.code }}</td>
-                    <td>{{ class_obj.semester }}</td>
-                    <td>{{ class_obj.class_type or '-' }}</td>
-                    <td>{{ class_obj.room or '-' }}</td>
-                    <td><span class="badge bg-secondary">{{ class_obj.discipline.department }}</span></td>
-                    <td>
-                        {% for sched in class_obj.schedules %}
-                        <small class="d-block">{{ sched.day }} {{ sched.start_time }}-{{ sched.end_time }}</small>
+                    <td class="px-6 py-4 border-b border-gray-200 bg-white text-sm text-center">
+                        {{ c.code }}
+                    </td>
+                    <td class="px-6 py-4 border-b border-gray-200 bg-white text-sm text-center">
+                        {{ c.class_type }}
+                    </td>
+                    <td class="px-6 py-4 border-b border-gray-200 bg-white text-sm text-center">
+                        {{ c.room }}
+                    </td>
+                    <td class="px-6 py-4 border-b border-gray-200 bg-white text-sm">
+                        {% for s in c.schedules %}
+                        <div class="whitespace-nowrap">
+                            <span class="font-semibold">{{ s.day }}</span>
+                            {{ s.start_time.strftime('%H:%M') }}-{{ s.end_time.strftime('%H:%M') }}
+                        </div>
+                        {% endfor %}
+                    </td>
+                    <td class="px-6 py-4 border-b border-gray-200 bg-white text-sm">
+                        {% for cp in c.professors %}
+                        <div class="whitespace-nowrap">
+                            {{ cp.professor.name }}
+                        </div>
                         {% endfor %}
                     </td>
                 </tr>
