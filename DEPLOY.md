@@ -1,13 +1,15 @@
-# Guia de Deploy - Servidor de Produção
+# Guia de Deploy e Desenvolvimento
+
+## 1. Ambiente de Produção (Servidor)
 
 Este guia descreve os passos para colocar o sistema Horários em produção.
 
-## Pré-requisitos no Servidor
+### Pré-requisitos
 -   Docker e Docker Compose instalados.
 -   Git instalado.
 -   Acesso à Internet.
 
-## Passos para Deploy
+### Passos para Deploy
 
 1.  **Preparar Diretório e Clonar:**
     Acesse o servidor via SSH, crie o diretório `/sistemas` e clone o projeto:
@@ -20,11 +22,9 @@ Este guia descreve os passos para colocar o sistema Horários em produção.
     ```
 
 2.  **Configurar Variáveis de Ambiente:**
-    Crie o arquivo `.env` na raiz do projeto (`/sistemas/horarios`) com as credenciais de produção.
+    Crie o arquivo `.env` na raiz do projeto com as credenciais de produção.
     **Nota:** Para produção, o `USP_CALLBACK_ID` deve ser **66**.
     
-    Use o comando `nano .env` e cole o conteúdo:
-
     ```ini
     SECRET_KEY=sua_chave_secreta_super_segura_producao
     
@@ -54,41 +54,81 @@ Este guia descreve os passos para colocar o sistema Horários em produção.
     ```
 
 3.  **Subir a Aplicação:**
-    Execute o Docker Compose para construir e iniciar o container:
+    Execute o Docker Compose:
     ```bash
     sudo docker-compose up --build -d
     ```
 
-4.  **Verificar Status:**
-    Verifique se o container está rodando (deve estar "Up"):
+4.  **Inicialização do Banco de Dados (Primeira Vez):**
     ```bash
-    sudo docker ps
-    ```
-
-5.  **Inicialização do Banco de Dados (Apenas na 1ª Instalação):**
-    Como as migrações automáticas foram desativadas para evitar erros em bancos vazios, execute os comandos abaixo manualmente para criar a estrutura:
-
-    ```bash
-    # 1. Gera o arquivo de migração inicial
-    sudo docker-compose exec web flask db migrate -m "Initial schema"
-    
-    # 2. Aplica a migração (cria as tabelas)
+    # Cria estrutura do banco
     sudo docker-compose exec web flask db upgrade
     
-    # 3. Cria o usuário admin
+    # Cria usuário admin (se configurado no .env)
     sudo docker-compose exec web python create_admin.py
     ```
 
-6.  **Importar Dados Iniciais:**
-    -   Acesse o sistema no navegador (porta 5001 ou configure um proxy reverso Nginx para porta 80/443).
-    -   Faça login como Admin.
-    -   Vá em "Consultas" -> "Importar Dados".
-    -   Faça o upload do arquivo CSV `todos_horarios.csv`.
+---
 
-## Atualizações Futuras
-Para atualizar o sistema com novas modificações do GitHub:
+## 2. Ambiente de Desenvolvimento (Local / Home Office)
 
-1.  Entre na pasta do projeto: `cd horarios`
-2.  Baixe as atualizações: `git pull origin main`
-3.  Reconstrua o container: `sudo docker-compose up --build -d`
-4.  Aplique eventuais novas migrações: `sudo docker-compose exec web flask db upgrade`
+Para continuar o desenvolvimento em casa:
+
+### Pré-requisitos
+-   Docker Desktop ou Docker Engine + Compose.
+-   Git.
+
+### Configuração Inicial
+
+1.  **Clonar o Repositório:**
+    ```bash
+    git clone https://github.com/luiscarlosdesouza/horarios.git
+    cd horarios
+    ```
+
+2.  **Configurar `.env`:**
+    Crie um arquivo `.env` baseado no exemplo acima, mas pode usar credenciais de teste.
+    **Importante:** Para rodar localmente (localhost), o `USP_CALLBACK_ID` geralmente é diferente (ex: **64** ou outro configurado para 127.0.0.1).
+
+3.  **Rodar o Projeto:**
+    ```bash
+    # Subir o container (o código fonte é mapeado, então edições locais funcionam na hora)
+    docker-compose up -d
+    ```
+    Acesse em: `http://localhost:5001`
+
+4.  **Aplicar Migrações (Banco Novo):**
+    ```bash
+    docker-compose exec web flask db upgrade
+    docker-compose exec web python create_admin.py
+    ```
+
+### Comandos Úteis
+
+-   **Ver logs:** `docker-compose logs -f web`
+-   **Reiniciar serviço:** `docker-compose restart web`
+-   **Parar tudo:** `docker-compose down`
+-   **Instalar nova dependência:** 
+    1. Adicione ao `requirements.txt`.
+    2. Rode `docker-compose up --build -d`.
+
+### Backup e Restauração de Dados
+
+Se quiser levar os dados do servidor para casa:
+
+1.  **Backup (no servidor):**
+    ```bash
+    # Copia o banco SQLite do container para a pasta local
+    docker-compose cp web:/app/instance/horarios.db ./horarios_backup.db
+    # ou se estiver mapeado na máquina local:
+    cp instance/horarios.db ~/Desktop/horarios_backup.db
+    ```
+    Baixe o arquivo `horarios_backup.db` via SCP/SFTP.
+
+2.  **Restaurar (em casa):**
+    Coloque o arquivo na pasta `instance/` local:
+    ```bash
+    mkdir -p instance
+    mv horarios_backup.db instance/horarios.db
+    ```
+    Reinicie o container.

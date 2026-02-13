@@ -129,8 +129,12 @@
                 {% for c in search_results %}
                 <tr>
                     <td class="px-6 py-4 border-b border-gray-200 bg-white text-sm">
+                        {% if c.discipline %}
                         <span class="font-bold text-gray-800">{{ c.discipline.code }}</span><br>
                         <span class="text-gray-600">{{ c.discipline.name }}</span>
+                        {% else %}
+                        <span class="text-danger">Disciplina não encontrada</span>
+                        {% endif %}
                     </td>
                     <td class="px-6 py-4 border-b border-gray-200 bg-white text-sm text-center">
                         {{ c.code }}
@@ -145,14 +149,18 @@
                         {% for s in c.schedules %}
                         <div class="whitespace-nowrap">
                             <span class="font-semibold">{{ s.day }}</span>
-                            {{ s.start_time.strftime('%H:%M') }}-{{ s.end_time.strftime('%H:%M') }}
+                            {{ s.start_time }}-{{ s.end_time }}
                         </div>
                         {% endfor %}
                     </td>
                     <td class="px-6 py-4 border-b border-gray-200 bg-white text-sm">
                         {% for cp in c.professors %}
                         <div class="whitespace-nowrap">
+                            {% if cp.professor %}
                             {{ cp.professor.name }}
+                            {% else %}
+                            <span class="text-danger">Docente não encontrado (ID: {{ cp.id }})</span>
+                            {% endif %}
                         </div>
                         {% endfor %}
                     </td>

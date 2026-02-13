@@ -23,27 +23,31 @@ def index():
     
     if discipline_filter or class_filter or department_filter or level_filter:
         has_search = True
-        from sqlalchemy import or_
-        query = Class.query.join(Discipline)
-        
-        if discipline_filter:
-            query = query.filter(
-                or_(
-                    Discipline.code.ilike(f'%{discipline_filter}%'),
-                    Discipline.name.ilike(f'%{discipline_filter}%')
+        try:
+            from sqlalchemy import or_
+            query = Class.query.join(Discipline)
+            
+            if discipline_filter:
+                query = query.filter(
+                    or_(
+                        Discipline.code.ilike(f'%{discipline_filter}%'),
+                        Discipline.name.ilike(f'%{discipline_filter}%')
+                    )
                 )
-            )
-        
-        if class_filter:
-            query = query.filter(Class.code.ilike(f'%{class_filter}%'))
             
-        if department_filter:
-            query = query.filter(Discipline.department == department_filter)
-            
-        if level_filter:
-            query = query.filter(Discipline.degree_level == level_filter)
-            
-        search_results = query.limit(100).all()
+            if class_filter:
+                query = query.filter(Class.code.ilike(f'%{class_filter}%'))
+                
+            if department_filter:
+                query = query.filter(Discipline.department == department_filter)
+                
+            if level_filter:
+                query = query.filter(Discipline.degree_level == level_filter)
+                
+            search_results = query.limit(100).all()
+        except Exception as e:
+            flash(f"Erro na pesquisa: {str(e)}", "danger")
+            search_results = []
     
     return render_template('index.html', 
                            total_classes=total_classes,

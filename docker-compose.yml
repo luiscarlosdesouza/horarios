@@ -6,6 +6,7 @@ services:
     ports:
       - "5001:5001"
     volumes:
+      - .:/app
       - ./instance:/app/instance
       - ./migrations:/app/migrations
     environment:
