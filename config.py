@@ -25,4 +25,4 @@ class Config:
     EMAIL_SMTP_SERVER = os.environ.get('EMAIL_SMTP_SERVER')
     EMAIL_SMTP_PORT = int(os.environ.get('EMAIL_SMTP_PORT') or 587)
     EMAIL_TO = os.environ.get('EMAIL_TO')
- or 'luiscarlosdesouza@gmail.com'
+
