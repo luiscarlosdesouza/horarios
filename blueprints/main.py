@@ -85,9 +85,13 @@ def export_pdf():
         # Generate PDF
         from xhtml2pdf import pisa
         from io import BytesIO
+        from datetime import datetime
+        
+        generated_at = datetime.now().strftime("%d/%m/%y %H:%M")
         
         html = render_template('pdf_report.html', classes=classes, 
-                              department=department_filter, level=level_filter)
+                              department=department_filter, level=level_filter,
+                              generated_at=generated_at)
         
         pdf_output = BytesIO()
         pisa_status = pisa.CreatePDF(html, dest=pdf_output)
