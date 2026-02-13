@@ -36,6 +36,103 @@
     </div>
 </div>
 
+<!-- Filters -->
+<div class="card mb-4">
+    <div class="card-header bg-white">
+        <h5 class="mb-0 text-primary"><i class="bi bi-search me-2"></i>Pesquisar Horários</h5>
+    </div>
+    <div class="card-body">
+        <form method="GET" class="row g-3">
+            <div class="col-md-3">
+                <label for="discipline" class="form-label">Disciplina (Nome ou Código)</label>
+                <input type="text" class="form-control" id="discipline" name="discipline"
+                    value="{{ request.args.get('discipline', '') }}">
+            </div>
+            <div class="col-md-2">
+                <label for="class_code" class="form-label">Turma</label>
+                <input type="text" class="form-control" id="class_code" name="class_code"
+                    value="{{ request.args.get('class_code', '') }}">
+            </div>
+            <div class="col-md-2">
+                <label for="department" class="form-label">Departamento</label>
+                <select class="form-select" id="department" name="department">
+                    <option value="">Todos</option>
+                    <option value="MAC" {% if request.args.get('department')=='MAC' %}selected{% endif %}>MAC</option>
+                    <option value="MAE" {% if request.args.get('department')=='MAE' %}selected{% endif %}>MAE</option>
+                    <option value="MAT" {% if request.args.get('department')=='MAT' %}selected{% endif %}>MAT</option>
+                    <option value="MAP" {% if request.args.get('department')=='MAP' %}selected{% endif %}>MAP</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="degree_level" class="form-label">Nível</label>
+                <select class="form-select" id="degree_level" name="degree_level">
+                    <option value="">Todos</option>
+                    <option value="Graduação" {% if request.args.get('degree_level')=='Graduação' %}selected{% endif %}>
+                        Graduação</option>
+                    <option value="Pós-Graduação" {% if request.args.get('degree_level')=='Pós-Graduação' %}selected{%
+                        endif %}>Pós-Graduação</option>
+                </select>
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+            </div>
+            {% if has_search %}
+            <div class="col-12 text-end">
+                <a href="{{ url_for('main.index') }}" class="btn btn-sm btn-outline-secondary">Limpar Filtros</a>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+</div>
+
+{% if has_search %}
+<!-- Search Results -->
+<div class="card mb-5 shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Resultados da Pesquisa</h5>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Turma</th>
+                    <th>Semestre</th>
+                    <th>Tipo</th>
+                    <th>Sala</th>
+                    <th>Depto</th>
+                    <th>Horários</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for class_obj in search_results %}
+                <tr>
+                    <td>
+                        <strong>{{ class_obj.discipline.code }}</strong><br>
+                        <small class="text-muted">{{ class_obj.discipline.name }}</small>
+                    </td>
+                    <td>{{ class_obj.code }}</td>
+                    <td>{{ class_obj.semester }}</td>
+                    <td>{{ class_obj.class_type or '-' }}</td>
+                    <td>{{ class_obj.room or '-' }}</td>
+                    <td><span class="badge bg-secondary">{{ class_obj.discipline.department }}</span></td>
+                    <td>
+                        {% for sched in class_obj.schedules %}
+                        <small class="d-block">{{ sched.day }} {{ sched.start_time }}-{{ sched.end_time }}</small>
+                        {% endfor %}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="7" class="text-center py-4">Nenhuma turma encontrada com esses filtros.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+
 <!-- Report Sections -->
 <div class="row">
     <div class="col-md-12">

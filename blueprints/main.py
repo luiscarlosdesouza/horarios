@@ -11,10 +11,46 @@ def index():
     total_disciplines = Discipline.query.count()
     total_professors = Professor.query.count()
     
+    # Filters
+    discipline_filter = request.args.get('discipline')
+    class_filter = request.args.get('class_code')
+    department_filter = request.args.get('department')
+    level_filter = request.args.get('degree_level')
+    
+    # If any filter is present, run search
+    search_results = []
+    has_search = False
+    
+    if discipline_filter or class_filter or department_filter or level_filter:
+        has_search = True
+        from sqlalchemy import or_
+        query = Class.query.join(Discipline)
+        
+        if discipline_filter:
+            query = query.filter(
+                or_(
+                    Discipline.code.ilike(f'%{discipline_filter}%'),
+                    Discipline.name.ilike(f'%{discipline_filter}%')
+                )
+            )
+        
+        if class_filter:
+            query = query.filter(Class.code.ilike(f'%{class_filter}%'))
+            
+        if department_filter:
+            query = query.filter(Discipline.department == department_filter)
+            
+        if level_filter:
+            query = query.filter(Discipline.degree_level == level_filter)
+            
+        search_results = query.limit(100).all()
+    
     return render_template('index.html', 
                            total_classes=total_classes,
                            total_disciplines=total_disciplines,
-                           total_professors=total_professors)
+                           total_professors=total_professors,
+                           search_results=search_results,
+                           has_search=has_search)
 
 @main_bp.route('/horarios/relatorio')
 def report_schedules():
