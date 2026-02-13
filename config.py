@@ -13,3 +13,8 @@ class Config:
     USP_CLIENT_KEY = os.environ.get('USP_CLIENT_KEY')
     USP_CLIENT_SECRET = os.environ.get('USP_CLIENT_SECRET')
     USP_CALLBACK_ID = os.environ.get('USP_CALLBACK_ID')
+    
+    # Admin User
+    ADMIN_USERNAME = os.environ.get('ADMIN_USERNAME')
+    ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD')
+    ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL')

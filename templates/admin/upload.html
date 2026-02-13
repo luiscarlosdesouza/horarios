@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                Importação de Horários
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="file" class="form-label">Arquivo CSV (todos_horarios.csv)</label>
+                        <input class="form-control" type="file" id="file" name="file" accept=".csv" required>
+                    </div>
+                    <div class="alert alert-info">
+                        <strong>Nota:</strong> O arquivo deve seguir o padrão extraído do site do IME.
+                        <br>Colunas: Código da Turma, Código da Disciplina, Nome da Disciplina, Tipo da Turma, Sala,
+                        Horários, Professor(es)
+                    </div>
+                    <button type="submit" class="btn btn-primary">Importar</button>
+                    <a href="{{ url_for('main.index') }}" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

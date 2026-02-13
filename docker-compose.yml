@@ -1,0 +1,27 @@
+
+
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./instance:/app/instance
+      - ./migrations:/app/migrations
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - ADMIN_USERNAME=${ADMIN_USERNAME}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - EMAIL_SMTP_SERVER=${EMAIL_SMTP_SERVER}
+      - EMAIL_SMTP_PORT=${EMAIL_SMTP_PORT}
+      - EMAIL_TO=${EMAIL_TO}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - USP_CLIENT_KEY=${USP_CLIENT_KEY}
+      - USP_CLIENT_SECRET=${USP_CLIENT_SECRET}
+      - USP_CALLBACK_ID=${USP_CALLBACK_ID}
+      - TZ=America/Sao_Paulo
+    restart: always
