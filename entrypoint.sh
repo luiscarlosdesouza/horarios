@@ -2,7 +2,7 @@
 set -e
 
 echo "Running migrations..."
-flask db migrate -m "Auto migration for schedule update" || true
+
 flask db upgrade
 
 echo "Creating/Updating admin user..."
