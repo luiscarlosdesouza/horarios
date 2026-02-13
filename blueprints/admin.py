@@ -78,12 +78,23 @@ def edit_user(user_id=None):
         # receive_notifications logic omitted as service doesn't exist yet
         
         if user:
+            old_role = user.role
             user.name = name
             user.email = email
             user.role = role
             db.session.commit()
             
-            flash('Usuário atualizado com sucesso!', 'success')
+            if old_role != role and user.email:
+                try:
+                    from services.email_service import send_role_update_email
+                    send_role_update_email(user, old_role, role)
+                    flash('Usuário atualizado e notificado por e-mail!', 'success')
+                except Exception as e:
+                    print(f"Erro ao enviar email de role: {e}")
+                    flash('Usuário atualizado, mas erro ao enviar e-mail.', 'warning')
+            else:
+                flash('Usuário atualizado com sucesso!', 'success')
+                
             return redirect(url_for('admin.users_list'))
         else:
             username = request.form.get('username')
@@ -135,38 +146,44 @@ from models import GlobalSettings
 @admin_bp.route('/settings', methods=['GET', 'POST'])
 @login_required
 def settings():
-    if current_user.role != 'admin':
-        flash('Acesso negado.', 'danger')
-        return redirect(url_for('main.index'))
-        
-    settings = GlobalSettings.query.first()
-    if not settings:
-        settings = GlobalSettings()
-        # Pre-populate from Env if available
-        settings.smtp_server = current_app.config.get('EMAIL_SMTP_SERVER')
-        settings.smtp_port = current_app.config.get('EMAIL_SMTP_PORT')
-        settings.email_user = current_app.config.get('EMAIL_USER')
-        settings.email_password = current_app.config.get('EMAIL_PASSWORD')
-        settings.email_to = current_app.config.get('EMAIL_TO')
-        
-        db.session.add(settings)
-        db.session.commit()
-
-        
-    if request.method == 'POST':
-        settings.smtp_server = request.form.get('smtp_server')
-        settings.smtp_port = int(request.form.get('smtp_port'))
-        settings.email_user = request.form.get('email_user')
-        
-        pwd = request.form.get('email_password')
-        if pwd and pwd.strip():
-            settings.email_password = pwd
+    try:
+        if current_user.role != 'admin':
+            flash('Acesso negado.', 'danger')
+            return redirect(url_for('main.index'))
             
-        settings.email_to = request.form.get('email_to')
-        settings.interval_weekday = int(request.form.get('interval_weekday') or 60)
-        settings.interval_weekend = int(request.form.get('interval_weekend') or 120)
-        
-        db.session.commit()
-        flash('Configurações atualizadas com sucesso!', 'success')
-        
-    return render_template('admin/settings.html', settings=settings)
+        settings = GlobalSettings.query.first()
+        if not settings:
+            settings = GlobalSettings()
+            # Pre-populate from Env if available
+            settings.smtp_server = current_app.config.get('EMAIL_SMTP_SERVER')
+            settings.smtp_port = current_app.config.get('EMAIL_SMTP_PORT')
+            settings.email_user = current_app.config.get('EMAIL_USER')
+            settings.email_password = current_app.config.get('EMAIL_PASSWORD')
+            settings.email_to = current_app.config.get('EMAIL_TO')
+            
+            db.session.add(settings)
+            db.session.commit()
+
+            
+        if request.method == 'POST':
+            settings.smtp_server = request.form.get('smtp_server')
+            settings.smtp_port = int(request.form.get('smtp_port'))
+            settings.email_user = request.form.get('email_user')
+            
+            pwd = request.form.get('email_password')
+            if pwd and pwd.strip():
+                settings.email_password = pwd
+                
+            settings.email_to = request.form.get('email_to')
+            settings.interval_weekday = int(request.form.get('interval_weekday') or 60)
+            settings.interval_weekend = int(request.form.get('interval_weekend') or 120)
+            
+            db.session.commit()
+            flash('Configurações atualizadas com sucesso!', 'success')
+            
+        return render_template('admin/settings.html', settings=settings)
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        flash(f'Erro interno ao carregar configurações: {str(e)}', 'danger')
+        return redirect(url_for('main.index'))

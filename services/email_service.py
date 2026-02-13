@@ -98,4 +98,18 @@ def send_new_user_admin_notification(new_user, admins):
     """
     return send_email(subject, recipients, html_body)
 
+def send_role_update_email(user, old_role, new_role):
+    subject = "Atualização de Permissões - Sistema de Horários"
+    html_body = f"""
+    <h3>Olá, {user.name or user.username}!</h3>
+    <p>Suas permissões no sistema foram alteradas.</p>
+    <ul>
+        <li><b>Perfil Anterior:</b> {old_role}</li>
+        <li><b>Novo Perfil:</b> {new_role}</li>
+    </ul>
+    <p>Se você recebeu permissões de operador ou administrador, novas funcionalidades já estão disponíveis no menu.</p>
+    <p><i>Acesse: <a href="http://www2.ime.usp.br:5001">Sistema de Horários</a></i></p>
+    """
+    return send_email(subject, [user.email], html_body)
+
 
