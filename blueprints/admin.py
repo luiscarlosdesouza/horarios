@@ -139,6 +139,7 @@ def settings():
         flash('Acesso negado.', 'danger')
         return redirect(url_for('main.index'))
         
+    settings = GlobalSettings.query.first()
     if not settings:
         settings = GlobalSettings()
         # Pre-populate from Env if available
