@@ -3,7 +3,11 @@ set -e
 
 echo "Running migrations..."
 
-flask db upgrade
+if [ -d "migrations" ]; then
+    flask db upgrade
+else
+    echo "Migrations directory not found. Skipping upgrade."
+fi
 
 echo "Creating/Updating admin user..."
 python create_admin.py
