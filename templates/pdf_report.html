@@ -64,53 +64,60 @@
 <body>
 
 
-    <h2>Relatório de Horários - IME USP</h2>
+    <body>
+        <div id="footer">
+            <strong>INSTITUTO DE MATEMÁTICA, ESTATÍSTICA E CIÊNCIA DA COMPUTAÇÃO</strong><br>
+            UNIVERSIDADE DE SÃO PAULO<br>
+            Rua do Matão, 1010 – CEP 05508-090 – São Paulo – SP
+        </div>
 
-    <div class="meta">
-        Gerado em: {% set now = namespace(value=None) %}
-        Filtros:
-        {% if department %}Depto: {{ department }} | {% endif %}
-        {% if level %}Nível: {{ level }}{% endif %}
-    </div>
+        <h2>Relatório de Horários - IME USP</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th width="15%">Código</th>
-                <th width="35%">Disciplina</th>
-                <th width="10%">Turma</th>
-                <th width="10%">Tipo</th>
-                <th width="10%">Sala</th>
-                <th width="20%">Horários</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for c in classes %}
-            <tr>
-                <td>{{ c.discipline.code }}</td>
-                <td>{{ c.discipline.name }}</td>
-                <td class="center">{{ c.code }}</td>
-                <td class="center">{{ c.class_type }}</td>
-                <td class="center">{{ c.room }}</td>
-                <td>
-                    {% for s in c.schedules %}
-                    {{ s.day }} {{ s.start_time }}-{{ s.end_time }}<br>
-                    {% endfor %}
-                </td>
-            </tr>
-            {% else %}
-            <tr>
-                <td colspan="6" class="center">Nenhuma turma encontrada.</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        <div class="meta">
+            Gerado em: {% set now = namespace(value=None) %}
+            Filtros:
+            {% if department %}Depto: {{ department }} | {% endif %}
+            {% if level %}Nível: {{ level }}{% endif %}
+        </div>
 
-    <div class="footer-static">
-        <strong>INSTITUTO DE MATEMÁTICA, ESTATÍSTICA E CIÊNCIA DA COMPUTAÇÃO</strong><br>
-        UNIVERSIDADE DE SÃO PAULO<br>
-        Rua do Matão, 1010 – CEP 05508-090 – São Paulo – SP
-    </div>
-</body>
+        <table>
+            <thead>
+                <tr>
+                    <th width="15%">Código</th>
+                    <th width="35%">Disciplina</th>
+                    <th width="10%">Turma</th>
+                    <th width="10%">Tipo</th>
+                    <th width="10%">Sala</th>
+                    <th width="20%">Horários</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in classes %}
+                <tr>
+                    <td>{{ c.discipline.code }}</td>
+                    <td>{{ c.discipline.name }}</td>
+                    <td class="center">{{ c.code }}</td>
+                    <td class="center">{{ c.class_type }}</td>
+                    <td class="center">{{ c.room }}</td>
+                    <td>
+                        {% for s in c.schedules %}
+                        {{ s.day }} {{ s.start_time }}-{{ s.end_time }}<br>
+                        {% endfor %}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="6" class="center">Nenhuma turma encontrada.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="footer-static">
+            <strong>INSTITUTO DE MATEMÁTICA, ESTATÍSTICA E CIÊNCIA DA COMPUTAÇÃO</strong><br>
+            UNIVERSIDADE DE SÃO PAULO<br>
+            Rua do Matão, 1010 – CEP 05508-090 – São Paulo – SP
+        </div>
+    </body>
 
 </html>
