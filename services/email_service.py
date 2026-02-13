@@ -38,8 +38,12 @@ def send_email(subject, recipients, html_body, sender=None):
             print("WARNING: Missing email configuration (SMTP/User/Pass). Cannot send email.")
             return False
 
+        sender_email = config['email_user']
+        # Format: "Name <email>"
+        default_sender = f"Horarios IME <{sender_email}>"
+        
         msg = MIMEMultipart()
-        msg['From'] = sender or config['email_user']
+        msg['From'] = sender or default_sender
         msg['To'] = ", ".join(recipients)
         msg['Subject'] = subject
         msg.attach(MIMEText(html_body, 'html'))
