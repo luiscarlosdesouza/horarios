@@ -181,7 +181,11 @@ def schedules_list():
     per_page = 20
     pagination = query.paginate(page=page, per_page=per_page, error_out=False)
     
-    return render_template('admin/schedules.html', pagination=pagination, classes=pagination.items)
+    # Filter args for pagination links (remove 'page' to avoid collision)
+    query_params = request.args.copy()
+    query_params.pop('page', None)
+    
+    return render_template('admin/schedules.html', pagination=pagination, classes=pagination.items, query_params=query_params)
 
 @admin_bp.route('/schedules/edit/<int:class_id>', methods=['GET', 'POST'])
 @login_required
