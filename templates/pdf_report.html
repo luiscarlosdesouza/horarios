@@ -45,10 +45,37 @@
         .page-break {
             page-break-before: always;
         }
+
+        #footer {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            text-align: center;
+            font-size: 8pt;
+            color: #555;
+            padding-top: 5px;
+            border-top: 1px solid #ccc;
+            height: 50px;
+        }
+
+        @page {
+            margin-bottom: 2cm;
+
+            @bottom-center {
+                content: element(footer);
+            }
+        }
     </style>
 </head>
 
 <body>
+    <div id="footer">
+        <strong>INSTITUTO DE MATEMÁTICA, ESTATÍSTICA E CIÊNCIA DA COMPUTAÇÃO</strong><br>
+        UNIVERSIDADE DE SÃO PAULO<br>
+        Rua do Matão, 1010 – CEP 05508-090 – São Paulo – SP
+    </div>
+
     <h2>Relatório de Horários - IME USP</h2>
 
     <div class="meta">
