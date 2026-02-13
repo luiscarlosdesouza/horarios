@@ -30,21 +30,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('main.index') }}">Dashboard</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Consultas
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url_for('main.report_schedules') }}">Geral (Todas)</a>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Por Disciplina</a></li>
-                            <li><a class="dropdown-item" href="#">Por Professor</a></li>
-                            <li><a class="dropdown-item" href="#">Por Sala</a></li>
-                        </ul>
-                    </li>
+
                     {% if current_user.role == 'admin' %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('admin.users_list') }}">Gerenciar Usuários</a>
