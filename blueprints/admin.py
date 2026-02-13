@@ -4,15 +4,14 @@ from services.importer import process_csv_stream
 
 admin_bp = Blueprint('admin', __name__, url_prefix='/admin')
 
-@admin_bp.before_request
+@admin_bp.route('/upload', methods=['GET', 'POST'])
 @login_required
-def admin_required():
-    if current_user.role != 'admin':
-        flash('Acesso negado. Apenas administradores.', 'danger')
+def upload_csv():
+    # Allow Admin and Operator
+    if current_user.role not in ['admin', 'operator']:
+        flash('Acesso negado. Permissão insuficiente.', 'danger')
         return redirect(url_for('main.index'))
 
-@admin_bp.route('/upload', methods=['GET', 'POST'])
-def upload_csv():
     if request.method == 'POST':
         if 'file' not in request.files:
             flash('Nenhum arquivo enviado.', 'danger')
@@ -58,7 +57,7 @@ def users_list():
 @login_required
 def edit_user(user_id=None):
     if current_user.role != 'admin':
-        flash('Acesso negado.', 'danger')
+        flash('Acesso negado. Apenas administradores.', 'danger')
         return redirect(url_for('main.index'))
         
     user = User.query.get(user_id) if user_id else None
@@ -114,7 +113,7 @@ def edit_user(user_id=None):
 @login_required
 def delete_user(user_id):
     if current_user.role != 'admin':
-        flash('Acesso negado.', 'danger')
+        flash('Acesso negado. Apenas administradores.', 'danger')
         return redirect(url_for('admin.users_list'))
         
     user = User.query.get(user_id)

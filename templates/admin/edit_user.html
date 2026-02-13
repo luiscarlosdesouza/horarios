@@ -36,8 +36,10 @@
                         <select class="form-select" name="role">
                             <option value="user" {{ 'selected' if not user or user.role=='user' else '' }}>Usuário
                                 (Limitado)</option>
+                            <option value="operator" {{ 'selected' if user and user.role=='operator' else '' }}>Operador
+                                (Importar)</option>
                             <option value="admin" {{ 'selected' if user and user.role=='admin' else '' }}>Administrador
-                                (Acesso Total)</option>
+                                (Total)</option>
                         </select>
                     </div>
 

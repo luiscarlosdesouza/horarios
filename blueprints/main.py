@@ -5,7 +5,6 @@ from models import Class, Discipline, Professor, Schedule, ClassProfessor
 main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/')
-@login_required
 def index():
     # Dashboard summary
     total_classes = Class.query.count()
@@ -18,7 +17,6 @@ def index():
                            total_professors=total_professors)
 
 @main_bp.route('/horarios/relatorio')
-@login_required
 def report_schedules():
     department = request.args.get('department')
     level = request.args.get('level')
