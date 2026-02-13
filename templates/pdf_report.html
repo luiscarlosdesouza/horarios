@@ -75,10 +75,17 @@
         <h2>Relatório de Horários - IME USP</h2>
 
         <div class="meta">
-            Gerado em: {% set now = namespace(value=None) %}
-            Filtros:
-            {% if department %}Depto: {{ department }} | {% endif %}
-            {% if level %}Nível: {{ level }}{% endif %}
+            <strong>Filtros aplicados:</strong><br>
+            {% if department %}Departamento: {{ department }} | {% endif %}
+            {% if level %}Nível: {{ level }} | {% endif %}
+            {% if request.args.get('discipline') %}Disciplina: {{ request.args.get('discipline') }} | {% endif %}
+            {% if request.args.get('class_code') %}Turma: {{ request.args.get('class_code') }} | {% endif %}
+            {% if not department and not level and not request.args.get('discipline') and not
+            request.args.get('class_code') %}
+            Nenhum filtro selecionado (Todos os registros)
+            {% endif %}
+            <br><br>
+            Gerado em: {{ generated_at }}
         </div>
 
         <table>
