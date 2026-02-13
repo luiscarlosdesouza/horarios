@@ -125,6 +125,20 @@ def usp_callback():
                 db.session.commit()
                 # Send Notifications
                 try:
+                    from services.email_service import send_welcome_email, send_new_user_admin_notification
+                    
+                    # Send Welcome to User
+                    if user.email:
+                        send_welcome_email(user)
+                    
+                    # Notify Admins
+                    admins = User.query.filter_by(role='admin').all()
+                    send_new_user_admin_notification(user, admins)
+                        
+                except Exception as e:
+                    print(f"Error sending emails: {e}")
+
+                try:
                     from models import GlobalSettings
                     from services.email_service import send_welcome_email, send_new_user_admin_notification
                     

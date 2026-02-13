@@ -17,4 +17,12 @@ class Config:
     # Admin User
     ADMIN_USERNAME = os.environ.get('ADMIN_USERNAME')
     ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD')
-    ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL')
+    ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL') or 'luiscarlosdesouza@gmail.com'
+
+    # Email Config
+    EMAIL_USER = os.environ.get('EMAIL_USER')
+    EMAIL_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+    EMAIL_SMTP_SERVER = os.environ.get('EMAIL_SMTP_SERVER')
+    EMAIL_SMTP_PORT = int(os.environ.get('EMAIL_SMTP_PORT') or 587)
+    EMAIL_TO = os.environ.get('EMAIL_TO')
+ or 'luiscarlosdesouza@gmail.com'

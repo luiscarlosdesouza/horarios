@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for, current_app
 from flask_login import login_required, current_user
 from services.importer import process_csv_stream
 
@@ -139,11 +139,18 @@ def settings():
         flash('Acesso negado.', 'danger')
         return redirect(url_for('main.index'))
         
-    settings = GlobalSettings.query.first()
     if not settings:
         settings = GlobalSettings()
+        # Pre-populate from Env if available
+        settings.smtp_server = current_app.config.get('EMAIL_SMTP_SERVER')
+        settings.smtp_port = current_app.config.get('EMAIL_SMTP_PORT')
+        settings.email_user = current_app.config.get('EMAIL_USER')
+        settings.email_password = current_app.config.get('EMAIL_PASSWORD')
+        settings.email_to = current_app.config.get('EMAIL_TO')
+        
         db.session.add(settings)
         db.session.commit()
+
         
     if request.method == 'POST':
         settings.smtp_server = request.form.get('smtp_server')
