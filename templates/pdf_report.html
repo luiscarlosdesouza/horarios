@@ -53,18 +53,12 @@
             /* Ensure space for footer */
         }
 
-        #pdf-footer {
-            position: fixed;
-            bottom: 0cm;
-            left: 0cm;
-            width: 100%;
-            height: 2cm;
+        #pdf-header {
             text-align: center;
-            font-size: 8pt;
+            font-size: 10pt;
             color: #555;
-            padding-top: 10px;
-            border-top: 1px solid #ccc;
-            background-color: white;
+            margin-bottom: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -73,10 +67,9 @@
 
 
     <body>
-        <div id="footer">
-            <strong>INSTITUTO DE MATEMÁTICA, ESTATÍSTICA E CIÊNCIA DA COMPUTAÇÃO</strong><br>
-            UNIVERSIDADE DE SÃO PAULO<br>
-            Rua do Matão, 1010 – CEP 05508-090 – São Paulo – SP
+        <div id="pdf-header">
+            INSTITUTO DE MATEMÁTICA, ESTATÍSTICA E CIÊNCIA DA COMPUTAÇÃO<br>
+            UNIVERSIDADE DE SÃO PAULO
         </div>
 
         <h2>Relatório de Horários - IME USP</h2>
@@ -121,11 +114,7 @@
             </tbody>
         </table>
 
-        <div class="footer-static">
-            <strong>INSTITUTO DE MATEMÁTICA, ESTATÍSTICA E CIÊNCIA DA COMPUTAÇÃO</strong><br>
-            UNIVERSIDADE DE SÃO PAULO<br>
-            Rua do Matão, 1010 – CEP 05508-090 – São Paulo – SP
-        </div>
+
     </body>
 
 </html>
