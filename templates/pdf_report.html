@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            font-size: 10pt;
+        }
+
+        h2 {
+            text-align: center;
+            color: #003366;
+        }
+
+        .meta {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 9pt;
+            color: #555;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 6px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Relatório de Horários - IME USP</h2>
+
+    <div class="meta">
+        Gerado em: {% set now = namespace(value=None) %}
+        Filtros:
+        {% if department %}Depto: {{ department }} | {% endif %}
+        {% if level %}Nível: {{ level }}{% endif %}
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th width="15%">Código</th>
+                <th width="35%">Disciplina</th>
+                <th width="10%">Turma</th>
+                <th width="10%">Tipo</th>
+                <th width="10%">Sala</th>
+                <th width="20%">Horários</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in classes %}
+            <tr>
+                <td>{{ c.discipline.code }}</td>
+                <td>{{ c.discipline.name }}</td>
+                <td class="center">{{ c.code }}</td>
+                <td class="center">{{ c.class_type }}</td>
+                <td class="center">{{ c.room }}</td>
+                <td>
+                    {% for s in c.schedules %}
+                    {{ s.day }} {{ s.start_time }}-{{ s.end_time }}<br>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="6" class="center">Nenhuma turma encontrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

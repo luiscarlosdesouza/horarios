@@ -176,10 +176,12 @@ def schedules_list():
     if level_filter:
         query = query.filter(Discipline.degree_level == level_filter)
         
-    # Pagination (Limit to 50 for performance if no filter, or all if filtered? Let's limit 100)
-    schedules = query.limit(100).all()
+    # Pagination
+    page = request.args.get('page', 1, type=int)
+    per_page = 20
+    pagination = query.paginate(page=page, per_page=per_page, error_out=False)
     
-    return render_template('admin/schedules.html', classes=schedules)
+    return render_template('admin/schedules.html', pagination=pagination, classes=pagination.items)
 
 @admin_bp.route('/schedules/edit/<int:class_id>', methods=['GET', 'POST'])
 @login_required

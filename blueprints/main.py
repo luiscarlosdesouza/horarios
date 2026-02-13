@@ -52,6 +52,56 @@ def index():
                            search_results=search_results,
                            has_search=has_search)
 
+@main_bp.route('/horarios/pdf')
+def export_pdf():
+    # Reuse filtering logic (Copy-paste for now to ensure consistency, 
+    # ideally refactor into a service function later)
+    discipline_filter = request.args.get('discipline')
+    class_filter = request.args.get('class_code')
+    department_filter = request.args.get('department')
+    level_filter = request.args.get('degree_level')
+    
+    from sqlalchemy import or_
+    query = Class.query.join(Discipline)
+    
+    # Apply filters (same logic as index)
+    if discipline_filter:
+        query = query.filter(
+            or_(
+                Discipline.code.ilike(f'%{discipline_filter}%'),
+                Discipline.name.ilike(f'%{discipline_filter}%')
+            )
+        )
+    if class_filter:
+        query = query.filter(Class.code.ilike(f'%{class_filter}%'))
+    if department_filter:
+        query = query.filter(Discipline.department == department_filter)
+    if level_filter:
+        query = query.filter(Discipline.degree_level == level_filter)
+        
+    classes = query.order_by(Discipline.code).limit(200).all() # Limit for PDF performance
+    
+    # Generate PDF
+    from xhtml2pdf import pisa
+    from io import BytesIO
+    
+    html = render_template('pdf_report.html', classes=classes, 
+                          department=department_filter, level=level_filter)
+    
+    pdf_output = BytesIO()
+    pisa_status = pisa.CreatePDF(html, dest=pdf_output)
+    
+    if pisa_status.err:
+        return f"Erro ao gerar PDF: {pisa_status.err}", 500
+        
+    pdf_output.seek(0)
+    
+    from flask import send_file
+    return send_file(pdf_output, 
+                     as_attachment=True, 
+                     download_name='horarios_filtros.pdf', 
+                     mimetype='application/pdf')
+
 @main_bp.route('/horarios/relatorio')
 def report_schedules():
     department = request.args.get('department')
